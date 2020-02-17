@@ -65,6 +65,28 @@ class Graph:
         beginning from starting_vertex.
         """
 
+        #Instantiate a stack from util
+        #An empty set will be filled with the nodes visited
+        stack = Stack()
+        visited = set()
+
+        #add start point to the stack
+        stack.push(starting_vertex)
+
+        #while stack has nodes
+        while stack.size > 0:
+            current_node = stack.pop()
+            #check if visited -> add to visited --> get neighbors--->push to stack
+            if current_node not in visited:
+                visited.add(current_node)
+                print(current_node)
+                edges = self.get_neighbors(current_node)
+                for edge in edges:
+                    stack.push(edge)
+
+
+        
+
 
 
 
